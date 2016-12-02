@@ -1,0 +1,49 @@
+﻿@{
+    ViewBag.Title = "Interactive Bindings";
+}
+<h2>@ViewBag.Title.</h2>
+
+<form action="#" method="post">
+    <!-- ToDo -->
+    <p data-bind='event: {mouseover: function(data, event) { showDetails(data, event, "firstName") }, mouseout: hideDetails}'>
+        First name: <input data-bind='value: firstName' />
+        <span data-bind='visible: details() == "firstName"'>Your given name</span>
+    </p>
+    <p data-bind='event: {mouseover: function(data, event) { showDetails(data, event, "lastName") }, mouseout: hideDetails}'>
+        Last name: <input data-bind='value: lastName' />
+        <span data-bind='visible: details() == "lastName"'>Your surname</span>
+
+    <p>
+        Primary phone: <input data-bind='value: primaryPhone' />
+    </p>
+    <p>
+        Secondary phone: <input data-bind='value: secondaryPhone, enable: primaryPhone' />
+    </p>
+
+    <p>
+        Annoy me with special offers: <input data-bind='checked: annoyMe' type='checkbox' />
+    </p>
+
+    <div data-bind='visible: annoyMe'>
+        <div>
+            <input data-bind='checked: annoyTimes' value='morning' type='checkbox' />
+            In the morning
+        </div>
+        <div>
+            <input data-bind='checked: annoyTimes' value='afternoon' type='checkbox' />
+            In the afternoon
+        </div>
+        <div>
+            <input data-bind='checked: annoyTimes' value='evening' type='checkbox' />
+            In the evening
+        </div>
+    </div>
+
+    <div data-bind='visible: annoyMe'>
+        <select data-bind='options: annoyTimesDrop, value: selectedTime'></select>
+        <select data-bind='options: products, optionsText: "name", selectedOptions: favoriteProducts' size='3' multiple='true'></select>
+    </div>
+
+    <p><button data-bind='click: saveUserData'>Submit</button></p>
+
+</form>

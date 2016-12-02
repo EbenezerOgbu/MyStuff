@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "Contact";
+}
+
+<h3>
+    All books (<span data-bind="text: books().length"></span>)
+</h3>
+<ul data-bind="foreach: books">
+    <li>
+        <label>
+            <input type="checkbox" data-bind="checked: read" />
+            <span data-bind="text: title"></span>
+        </label>
+    </li>
+</ul>
+<h3>
+    Read books (<span data-bind="text: readBooks().length"></span>)
+</h3>
+<ul data-bind="foreach: readBooks">
+    <li data-bind="text: title"></li>
+</ul>
+<h3>
+    Unread books (<span data-bind="text: unreadBooks().length"></span>)
+</h3>
+<ul data-bind="foreach: unreadBooks">
+    <li data-bind="text: title"></li>
+</ul>
