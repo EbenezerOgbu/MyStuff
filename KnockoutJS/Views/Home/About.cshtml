@@ -4,26 +4,7 @@
 <h2>@ViewBag.Title.</h2>
 
 <form action="#" method="post">
-    <!-- ToDo -->
-    <p data-bind='event: {mouseover: function(data, event) { showDetails(data, event, "firstName") }, mouseout: hideDetails}'>
-        First name: <input data-bind='value: firstName' />
-        <span data-bind='visible: details() == "firstName"'>Your given name</span>
-    </p>
-    <p data-bind='event: {mouseover: function(data, event) { showDetails(data, event, "lastName") }, mouseout: hideDetails}'>
-        Last name: <input data-bind='value: lastName' />
-        <span data-bind='visible: details() == "lastName"'>Your surname</span>
-
-    <p>
-        Primary phone: <input data-bind='value: primaryPhone' />
-    </p>
-    <p>
-        Secondary phone: <input data-bind='value: secondaryPhone, enable: primaryPhone' />
-    </p>
-
-    <p>
-        Annoy me with special offers: <input data-bind='checked: annoyMe' type='checkbox' />
-    </p>
-
+  
 
 
 
